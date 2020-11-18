@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1605016917 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\serialclass.cpp
+	"SerialClass.h"
+
+1605016494 c:\users\pablo\documents\c++\tp-labii\tp-labii\serialclass.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1605710239 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\main.cpp
+	<iostream>
+	<stdio.h>
+	<dos.h>
+	"conio.h"
+	"stdio.h"
+	"gestionPacientes.h"
+	"adquisidor.h"
+
+1605264523 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\arbol.cpp
+	"Arbol.h"
+
+1605264535 c:\users\pablo\documents\c++\tp-labii\tp-labii\arbol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1605264880 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\arbolfuncs.cpp
+
+1605708069 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\buffer.cpp
+	"buffer.h"
+
+1605708136 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\pacientes.cpp
+	"pacientes.h"
+
+1605626789 c:\users\pablo\documents\c++\tp-labii\tp-labii\pacientes.h
+	<iostream>
+	<string.h>
+	"pacientes.h"
+
+1605481343 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\registro.cpp
+
+1605708136 c:\users\pablo\documents\c++\tp-labii\tp-labii\buffer.h
+	<iostream>
+	<string>
+
+1605609017 c:\users\pablo\documents\c++\tp-labii\tp-labii\medicion.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1605609127 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\medicion.cpp
+	"medicion.h"
+
+1605710678 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\gestionpacientes.cpp
+	"gestionPacientes.h"
+
+1605710340 c:\users\pablo\documents\c++\tp-labii\tp-labii\gestionpacientes.h
+	<iostream>
+	<string>
+	"pacientes.h"
+
+1605705517 c:\users\pablo\documents\c++\tp-labii\tp-labii\adquisidor.h
+	<iostream>
+	<string>
+	"SerialClass.h"
+	"senial.h"
+
+1605705862 c:\users\pablo\documents\c++\tp-labii\tp-labii\senial.h
+	<iostream>
+	"buffer.h"
+
+1605708191 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\senial.cpp
+	"senial.h"
+
+1605711879 source:c:\users\pablo\documents\c++\tp-labii\tp-labii\adquisidor.cpp
+	"adquisidor.h"
+
