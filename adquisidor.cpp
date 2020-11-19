@@ -15,51 +15,51 @@ Adquisidor:: ~Adquisidor()
 float Adquisidor::adquirirEntrenamiento(float &prom)
 {
 
-     nodoSenial* s;
+    nodoSenial* s;
     nodoBuffer* b;
 
-        char palabra[] = "Comenzar";
-        char medicion[]="0000";
-        float valor;
+    char palabra[] = "Comenzar";
+    char medicion[]="0000";
+    float valor;
 
-        nodoBuffer* buffer;
-        nodoBuffer*aux;
+    nodoBuffer* buffer;
+    nodoBuffer*aux;
 
-        nodoSenial* senial;
-        nodoSenial* senAux;
-        senial=inicSenial();
+    nodoSenial* senial;
+    nodoSenial* senAux;
+    senial=inicSenial();
 
-        cout<<"Enviando :"<<palabra<<endl;
-        emisor->WriteData(palabra,sizeof(palabra)-1);
+    cout<<"Enviando :"<<palabra<<endl;
+    emisor->WriteData(palabra,sizeof(palabra)-1);//si quisiera arrancar el hard desde el soft
 
-        Sleep(500);
-        int i=0;
-        int j=0;
-        while(j<30)
+    Sleep(500);
+    int i=0;
+    int j=0;
+    while(j<30)
+    {
+        buffer=inicBuffer();
+        aux=inicBuffer();
+        senAux=inicSenial();
+        while( (i<dimBuffer)&&(emisor->IsConnected()) )
         {
-            buffer=inicBuffer();
-            aux=inicBuffer();
-            senAux=inicSenial();
-            while( (i<dimBuffer)&&(emisor->IsConnected()) )
-            {
-                i++;
-                emisor->ReadData(medicion,sizeof(medicion)-1);
-                valor=atof(medicion);
-                aux=crearNodoBuffer(valor);
-                cout<<endl<<valor<<endl;
-                buffer=agregarAlBuffer(buffer,aux);
-                Sleep(10);
-            }
-            j++;
-            i=0;
-            senAux=crearNodoSenial(buffer, dimBuffer);
-            senial=agregarToSenial(senial, senAux);
+            i++;
+            emisor->ReadData(medicion,sizeof(medicion)-1);
+            valor=atof(medicion);
+            aux=crearNodoBuffer(valor);
+            cout<<endl<<valor<<endl;
+            buffer=agregarAlBuffer(buffer,aux);
             Sleep(10);
         }
-        prom=promedioSenial(senial);
-        float menor=getMenor(senial);
-        float mayor=getMayor(senial);
-        return(mayor-menor);cout<<3;
+        j++;
+        i=0;
+        senAux=crearNodoSenial(buffer, dimBuffer);
+        senial=agregarToSenial(senial, senAux);
+        Sleep(10);
+    }
+    prom=promedioSenial(senial);
+    float menor=getMenor(senial);
+    float mayor=getMayor(senial);
+    return(mayor-menor);
 }
 
 void Adquisidor::entrenar()

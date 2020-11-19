@@ -21,4 +21,7 @@ float promedioSenial(nodoSenial* senial);
 float getMenor(nodoSenial* senial);
 float getMayor(nodoSenial* senial);
 
+// se pueden agregar distintos modulos de procesamiento
+// que devuelvan un nodo a la senial modificada
+nodoSenial* procPromedio(nodoSenial*)
 #endif // SENIAL_H_INCLUDED
