@@ -19,5 +19,6 @@ nodoBuffer* buscarUltimo(nodoBuffer* buffer);
 nodoBuffer* agregarAlBuffer(nodoBuffer* buffer, nodoBuffer* nuevoNodo);
 float sumarMedicionesBuffer(nodoBuffer* buffer);
 float promedioBuffer(nodoBuffer* buffer, int tamanioBuffer);
+int isCorrupted(char[] dato);
 
 #endif // BUFFER_H_INCLUDED

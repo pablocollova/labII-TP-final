@@ -53,8 +53,13 @@ float promedioBuffer(nodoBuffer* buffer, int tamanioBuffer)
 {
 
     float suma= sumarMedicionesBuffer(buffer);
-    cout<<endl<<" tamaño "<<tamanioBuffer<<" suma "<<suma<<endl;
+    cout<<endl<<" tamaï¿½o "<<tamanioBuffer<<" suma "<<suma<<endl;
     float prom=suma/tamanioBuffer;
     return prom;
 }
 
+int isCorrupted(char dato[])
+{
+    //verificacion del dato segun un protocolo de transferecia
+    //estipulado de antemano con el emisor
+}

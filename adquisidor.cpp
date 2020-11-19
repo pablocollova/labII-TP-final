@@ -115,40 +115,45 @@ void Adquisidor::start()
         {
             i++;
             emisor->ReadData(medicion,sizeof(medicion)-1);
-            valor=atof(medicion);
-            aux=crearNodoBuffer(valor);
-            buffer=agregarAlBuffer(buffer,aux);
-            promAux=promedioBuffer(buffer,dimBuffer);
-            if(((izquierda-ventana)<promAux)&&((izquierda+ ventana)>promAux))
+            if (isCorrupted(medicion))
             {
-                cout<<endl<<"---------------------"<<endl<<"izquierda"<<endl<<"--------------------"<<endl;
-            }
-            else if (((derecha-ventana)<promAux)&&((derecha+ ventana)>promAux))
-            {
-                cout<<endl<<"---------------------"<<endl<<"derecha"<<endl<<"--------------------"<<endl;
+                // dato corrupto... se pueden poner un contador 
+                //y si hay demasiados datos corruptos suspender la transferencia cout<<""
             }
             else
-                 {
-                cout<<endl<<"---------------------"<<endl<<"centro"<<endl<<"--------------------"<<endl;
+            {
+                valor=atof(medicion);
+                aux=crearNodoBuffer(valor);
+                buffer=agregarAlBuffer(buffer,aux);
+                promAux=promedioBuffer(buffer,dimBuffer);
+                if(((izquierda-ventana)<promAux)&&((izquierda+ ventana)>promAux))
+                {
+                    cout<<endl<<"---------------------"<<endl<<"izquierda"<<endl<<"--------------------"<<endl;
+                }
+                else if (((derecha-ventana)<promAux)&&((derecha+ ventana)>promAux))
+                {
+                    cout<<endl<<"---------------------"<<endl<<"derecha"<<endl<<"--------------------"<<endl;
+                }
+                else
+                {
+                    cout<<endl<<"---------------------"<<endl<<"centro"<<endl<<"--------------------"<<endl;
+                }
+                Sleep(400);
             }
-            Sleep(400);
+            j++;
+            i=0;
+            senAux=crearNodoSenial(buffer, dimBuffer);
+            senial=agregarToSenial(senial, senAux);
+            Sleep(10);
         }
-        j++;
-        i=0;
-        senAux=crearNodoSenial(buffer, dimBuffer);
-        senial=agregarToSenial(senial, senAux);
-        Sleep(10);
-        }
-
-
-
+    }
 }
 
 //printf("%c",'u');
     /*
-//Nomenclatura para crear conexión con los puertos COM1 - COM9
+//Nomenclatura para crear conexiï¿½n con los puertos COM1 - COM9
 Serial* Arduino = new Serial("COM7");
-//Nomenclatura para crear conexión con los puertos COM10 en adelante
+//Nomenclatura para crear conexiï¿½n con los puertos COM10 en adelante
 Serial* Arduino = new Serial("\\\\.\\COM10");
 
 if( Arduino->IsConnected() ) cout<<"Arduino Conectado";
@@ -161,7 +166,7 @@ Arduino->ReadData(lectura,50);
 //Crear un buffer de salida
 #define longEnvio 20
 char envio[longEnvio];
-//Hacer el envío indicando el buffer de salida y longitud
+//Hacer el envï¿½o indicando el buffer de salida y longitud
 Arduino->ReadData(envio,longEnvio);*/
 
 

@@ -25,6 +25,7 @@ void preorder(nodoPaciente * paciente);
 void postorder(nodoPaciente * paciente);
 void mostrarPaciente(nodoPaciente * paciente);
 nodoPaciente * buscar(nodoPaciente * paciente, int dato);
+nodoPaciente buscarXdni(nodoPaciente * raiz, int dni);
 
 /// funciones extras
 int sumarValorespaciente(nodoPaciente * paciente);
