@@ -62,4 +62,5 @@ int isCorrupted(char dato[])
 {
     //verificacion del dato segun un protocolo de transferecia
     //estipulado de antemano con el emisor
+    return 0;
 }
