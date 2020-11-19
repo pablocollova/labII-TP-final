@@ -118,3 +118,28 @@ int dibujarArbolPaciente(struct nodoPaciente * p)
         printf("%s\n", s[i]);
 }
 
+nodoPaciente buscarXdni(nodoPaciente * raiz, int dni)
+{
+    nodoPaciente * rta=NULL;
+    /// si no esta retornamos NULL
+
+    if (raiz!=NULL)
+    {
+        if(dni==raiz->dni)
+        {
+            rta=raiz;
+        }
+        else
+        {
+            if(dni>raiz->dni)
+            {
+                rta=buscar(raiz->der,dni);
+            }
+            else
+            {
+                rta=buscar(raiz->dni,dni);
+            }
+        }
+    }
+    return rta;
+}
