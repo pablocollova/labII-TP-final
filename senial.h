@@ -21,18 +21,4 @@ float promedioSenial(nodoSenial* senial);
 float getMenor(nodoSenial* senial);
 float getMayor(nodoSenial* senial);
 
-/*nodoSenial* borrarnodoSenialBuscado(nodoSenial* lista, int nota);
-nodoSenial* agregarEnOrden(nodoSenial * lista, nodoSenial* nuevonodoSenial);
-nodoSenial* borrarTodaLaLista(nodoSenial* lista);
-nodoSenial* borrarPrimernodoSenial(nodoSenial* lista);
-nodoSenial* borrarUltimonodoSenial(nodoSenial* lista);
-int sumarNotasLista(nodoSenial* lista);
-int sumarNotasListaRecursivo(nodoSenial* lista);
-int sumarNotasListaRecursivoTernario(nodoSenial* lista);
-void mostrarUnnodoSenial(nodoSenial* aux);
-void mostrarUnaNota(stNotaAlumno n);
-void recorrerYmostrar(nodoSenial* lista);
-int cuentaAlumnos(nodoSenial* lista);
-
-*/
 #endif // SENIAL_H_INCLUDED
